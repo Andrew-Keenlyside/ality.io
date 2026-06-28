@@ -1,0 +1,268 @@
+/* === tokens/fonts.css === */
+/* ============================================================
+   Ality — Fonts
+   Roboto (UI/body) + Roboto Mono (technical/data) via Google Fonts.
+   Substitution note: Material's native typeface is Roboto, used here
+   authentically. If self-hosting is required, swap these @imports for
+   local @font-face rules pointing at the .woff2 binaries.
+   ============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
+
+/* Iconography: Material Symbols (Outlined). Ligature icon font — set glyph by name. */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap");
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+
+/* === tokens/colors.css === */
+/* ============================================================
+   Ality — Color tokens
+   Muted, matt steel-blues (offshore) + cool greys.
+   Base palette → semantic aliases. Material-style tonal ramps.
+   ============================================================ */
+:root {
+  /* ---- Brand: steel blue (sampled from logo icon #32597C / wordmark #224360) ---- */
+  --blue-50:  #eef3f8;
+  --blue-100: #d6e2ee;
+  --blue-200: #aec4db;
+  --blue-300: #84a3c4;
+  --blue-400: #5a7fa0;   /* lighter steel */
+  --blue-500: #32597c;   /* PRIMARY — icon blue */
+  --blue-600: #2a4d6c;
+  --blue-700: #224360;   /* wordmark navy */
+  --blue-800: #16314a;
+  --blue-900: #0d2236;   /* deep offshore */
+
+  /* ---- Secondary: muted teal (renewable / wind) ---- */
+  --teal-50:  #e9f4f4;
+  --teal-100: #c8e4e5;
+  --teal-200: #97c9cc;
+  --teal-300: #63aab0;
+  --teal-400: #3d8d94;
+  --teal-500: #2f7d8a;   /* SECONDARY */
+  --teal-600: #266a76;
+  --teal-700: #1f555f;
+
+  /* ---- Cool grey neutrals ---- */
+  --grey-50:  #f6f8fa;
+  --grey-100: #eef1f4;
+  --grey-200: #e2e7ed;
+  --grey-300: #cdd5dd;
+  --grey-400: #a7b2bd;
+  --grey-500: #79858f;
+  --grey-600: #586572;
+  --grey-700: #3e4854;
+  --grey-800: #28303a;
+  --grey-900: #161c24;
+  --white:    #ffffff;
+
+  /* ---- Semantic status (muted, matt) ---- */
+  --green-500: #3f8f5f;   /* success / online turbine */
+  --green-100: #dcefe2;
+  --amber-500: #c08a2e;   /* warning / maintenance */
+  --amber-100: #f5e8cf;
+  --red-500:   #b8483f;   /* error / fault */
+  --red-100:   #f3dad7;
+  --info-500:  #3a6ea5;   /* info */
+  --info-100:  #dce8f3;
+
+  /* ============================================================
+     Semantic aliases — reference these in components
+     ============================================================ */
+  --color-primary:        var(--blue-500);
+  --color-primary-hover:  var(--blue-600);
+  --color-primary-active: var(--blue-700);
+  --color-on-primary:     var(--white);
+  --color-primary-container: var(--blue-100);
+  --color-on-primary-container: var(--blue-800);
+
+  --color-secondary:        var(--teal-500);
+  --color-secondary-hover:  var(--teal-600);
+  --color-on-secondary:     var(--white);
+  --color-secondary-container: var(--teal-100);
+  --color-on-secondary-container: var(--teal-700);
+
+  /* surfaces */
+  --surface-page:    var(--grey-50);
+  --surface-card:    var(--white);
+  --surface-sunken:  var(--grey-100);
+  --surface-raised:  var(--white);
+  --surface-inverse: var(--blue-900);
+  --surface-hover:   var(--grey-100);
+  --surface-selected: var(--blue-50);
+
+  /* text */
+  --text-primary:   var(--grey-900);
+  --text-secondary: var(--grey-600);
+  --text-tertiary:  var(--grey-500);
+  --text-disabled:  var(--grey-400);
+  --text-on-dark:   var(--white);
+  --text-on-dark-secondary: rgba(255,255,255,0.72);
+  --text-link:      var(--blue-600);
+
+  /* borders / dividers / outlines */
+  --border-subtle:  var(--grey-200);
+  --border-default: var(--grey-300);
+  --border-strong:  var(--grey-400);
+  --border-focus:   var(--blue-500);
+
+  /* status semantic */
+  --color-success:  var(--green-500);
+  --color-success-container: var(--green-100);
+  --color-warning:  var(--amber-500);
+  --color-warning-container: var(--amber-100);
+  --color-error:    var(--red-500);
+  --color-error-container: var(--red-100);
+  --color-info:     var(--info-500);
+  --color-info-container: var(--info-100);
+
+  /* focus ring */
+  --focus-ring: 0 0 0 3px rgba(50,89,124,0.32);
+}
+
+
+/* === tokens/typography.css === */
+/* ============================================================
+   Ality — Typography tokens
+   Material-style type scale. Roboto (UI/body), Roboto Mono (data).
+   ============================================================ */
+:root {
+  --font-sans: "Roboto", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono: "Roboto Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  /* weights */
+  --weight-regular: 400;
+  --weight-medium:  500;
+  --weight-bold:    700;
+
+  /* Material-ish type scale (size / line-height / tracking) */
+  --display-size: 57px;  --display-lh: 64px;  --display-tracking: -0.25px;
+  --headline-size: 32px; --headline-lh: 40px; --headline-tracking: 0px;
+  --title-lg-size: 22px; --title-lg-lh: 28px; --title-lg-tracking: 0px;
+  --title-size: 18px;    --title-lh: 24px;    --title-tracking: 0.1px;
+  --body-lg-size: 16px;  --body-lg-lh: 24px;  --body-lg-tracking: 0.15px;
+  --body-size: 14px;     --body-lh: 20px;     --body-tracking: 0.15px;
+  --label-size: 13px;    --label-lh: 18px;    --label-tracking: 0.4px;
+  --caption-size: 12px;  --caption-lh: 16px;  --caption-tracking: 0.4px;
+  --overline-size: 11px; --overline-lh: 16px; --overline-tracking: 1.2px;
+
+  --mono-size: 13px;     --mono-lh: 20px;
+}
+
+
+/* === tokens/spacing.css === */
+/* ============================================================
+   Ality — Spacing & sizing tokens
+   4px base grid (Material 8pt-friendly).
+   ============================================================ */
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* component sizing */
+  --control-height-sm: 32px;
+  --control-height-md: 40px;
+  --control-height-lg: 48px;
+  --touch-target: 44px;
+
+  /* layout */
+  --container-max: 1280px;
+  --sidebar-width: 264px;
+  --topbar-height: 60px;
+}
+
+
+/* === tokens/elevation.css === */
+/* ============================================================
+   Ality — Shape (radius) & elevation (shadow) tokens
+   Material elevation: soft, cool-toned, low-spread shadows.
+   Restrained corner radii — technical, not playful.
+   ============================================================ */
+:root {
+  /* corner radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* Material elevation levels — cool blue-grey ambient shadow */
+  --elev-0: none;
+  --elev-1: 0 1px 2px rgba(13,34,54,0.10), 0 1px 3px rgba(13,34,54,0.06);
+  --elev-2: 0 1px 3px rgba(13,34,54,0.12), 0 2px 6px rgba(13,34,54,0.08);
+  --elev-3: 0 2px 6px rgba(13,34,54,0.12), 0 6px 14px rgba(13,34,54,0.10);
+  --elev-4: 0 4px 10px rgba(13,34,54,0.14), 0 10px 24px rgba(13,34,54,0.12);
+  --elev-5: 0 8px 18px rgba(13,34,54,0.16), 0 18px 40px rgba(13,34,54,0.16);
+
+  /* motion — Material standard easing */
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);      /* @kind other */
+  --ease-decelerate: cubic-bezier(0, 0, 0, 1);      /* @kind other */
+  --ease-accelerate: cubic-bezier(0.3, 0, 1, 1);    /* @kind other */
+  --duration-fast: 120ms;   /* @kind other */
+  --duration-base: 200ms;   /* @kind other */
+  --duration-slow: 300ms;   /* @kind other */
+}
+
+
+/* === tokens/base.css === */
+/* ============================================================
+   Ality — base element + helper styles
+   Lightweight resets and typographic defaults.
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--body-size);
+  line-height: var(--body-lh);
+  letter-spacing: var(--body-tracking);
+  color: var(--text-primary);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Type helper classes (optional convenience) */
+.ds-display  { font-size: var(--display-size);  line-height: var(--display-lh);  letter-spacing: var(--display-tracking);  font-weight: var(--weight-bold); }
+.ds-headline { font-size: var(--headline-size); line-height: var(--headline-lh); font-weight: var(--weight-medium); }
+.ds-title-lg { font-size: var(--title-lg-size); line-height: var(--title-lg-lh); font-weight: var(--weight-medium); }
+.ds-title    { font-size: var(--title-size);    line-height: var(--title-lh);    font-weight: var(--weight-medium); }
+.ds-body-lg  { font-size: var(--body-lg-size);  line-height: var(--body-lg-lh); }
+.ds-body     { font-size: var(--body-size);     line-height: var(--body-lh); }
+.ds-label    { font-size: var(--label-size);    line-height: var(--label-lh);    letter-spacing: var(--label-tracking); font-weight: var(--weight-medium); }
+.ds-caption  { font-size: var(--caption-size);  line-height: var(--caption-lh);  letter-spacing: var(--caption-tracking); color: var(--text-secondary); }
+.ds-overline { font-size: var(--overline-size); line-height: var(--overline-lh); letter-spacing: var(--overline-tracking); text-transform: uppercase; font-weight: var(--weight-medium); color: var(--text-tertiary); }
+.ds-mono     { font-family: var(--font-mono); font-size: var(--mono-size); line-height: var(--mono-lh); }
+
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
