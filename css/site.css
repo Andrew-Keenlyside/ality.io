@@ -212,11 +212,12 @@ p { margin: 0; text-wrap: pretty; }
 .sea-live .page-home .close-band { background: transparent; }
 
 /* the intro: the mark alone on paper, then the field takes it apart */
-.intro-mark { display: none; position: fixed; z-index: 5; left: 50%; top: 50%; width: clamp(96px, 11vw, 150px); height: auto; transform: translate(-50%, -50%); color: var(--blue); pointer-events: none; }
+/* centred on its hub, the point it turns about, rather than on its box */
+.intro-mark { display: none; position: fixed; z-index: 5; left: 50%; top: 50%; width: clamp(96px, 11vw, 150px); height: auto; transform: translate(-50%, -59%); transform-origin: 50% 59%; color: var(--blue); pointer-events: none; }
 html.intro .intro-mark { display: block; animation: mark-in .8s cubic-bezier(.2, .8, .2, 1) both; }
 html.intro .intro-mark.out { animation: mark-out .4s ease both; }
-@keyframes mark-out { from { opacity: 1; transform: translate(-50%, -50%); } to { opacity: 0; transform: translate(-50%, -50%); } }
-@keyframes mark-in { from { opacity: 0; transform: translate(-50%, -50%) scale(.86) rotate(-40deg); } to { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0); } }
+@keyframes mark-out { from { opacity: 1; transform: translate(-50%, -59%); } to { opacity: 0; transform: translate(-50%, -59%); } }
+@keyframes mark-in { from { opacity: 0; transform: translate(-50%, -59%) scale(.86) rotate(-40deg); } to { opacity: 1; transform: translate(-50%, -59%) scale(1) rotate(0); } }
 html.intro body { overflow: hidden; }
 .rail { transition: opacity .9s ease .1s; }
 /* the nav and hero copy ride the intro's camera: hidden until the script takes them over */
@@ -257,8 +258,8 @@ html.intro .nav, html.intro .hero-copy { transition: none; will-change: transfor
   .story:not(.flat) .covers .intro { position: static; }
 }
 @media (max-width: 960px) {
-  /* on narrower screens the relief rides along the top while the chapters pass beneath it */
-  .story:not(.flat) .stage { position: sticky; top: 0; z-index: 2; height: 40vh; height: 40svh; background: linear-gradient(var(--paper) 84%, rgba(248, 248, 245, 0)); }
+  /* on narrower screens the relief rides along the foot of the screen; the chapters are read above it */
+  .story:not(.flat) .stage { position: sticky; bottom: 0; z-index: 2; height: 38vh; height: 38svh; background: linear-gradient(rgba(248, 248, 245, 0), var(--paper) 16%); }
   .page-home .story:not(.flat) .sec { min-height: 0; padding-top: var(--s5); }
 }
 /* the two kept sides stack once the chapter column is too narrow for them side by side */

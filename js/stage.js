@@ -291,7 +291,9 @@
   // where the reader is: 0 at the first chapter's middle, 1 at the second's, 2 at the third's;
   // below 0 (down to -1) while the first chapter is still coming up the screen
   Relief.prototype.progress = function () {
-    var H = window.innerHeight, c = this.sections.map(function (s) { var b = s.getBoundingClientRect(); return b.top + b.height / 2 - H / 2; });
+    // measured against the middle of where the chapters are read: the screen centre, or on phones (relief along the foot) the upper part
+    var H = window.innerHeight, ref = this.W > window.innerWidth * 0.9 ? H * 0.32 : H / 2;
+    var c = this.sections.map(function (s) { var b = s.getBoundingClientRect(); return b.top + b.height / 2 - ref; });
     if (c[0] >= 0) return -Math.min(1, c[0] / (H * 0.9));
     for (var i = 0; i < c.length - 1; i++) if (c[i] <= 0 && c[i + 1] > 0) return i + (-c[i]) / (c[i + 1] - c[i]);
     return c.length - 1;

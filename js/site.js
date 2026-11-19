@@ -124,7 +124,7 @@
     var W = window.innerWidth, H = window.innerHeight;
     // from layout, not the bounding box: the mark is still turning in when this runs
     var size = parseFloat(getComputedStyle(mark).width) || 140, s = size / 100;
-    var hub = { x: W / 2 - size / 2 + 50 * s, y: H / 2 - size / 2 + 59 * s };
+    var hub = { x: W / 2, y: H / 2 };                                 // the mark is centred on its hub (50, 59 in its box)
     var pts = [hub].concat([-90, 30, 150].map(function (a) { var t = a * Math.PI / 180; return { x: hub.x + Math.cos(t) * 42 * s, y: hub.y + Math.sin(t) * 42 * s }; }));
     // where the mark's hub comes to rest: open water in the hero, clear of the words
     var rest = W < 700 ? { x: W * 0.76, y: H * 0.19 } : { x: W * 0.76, y: H * 0.36 };
@@ -139,15 +139,15 @@
     };
     seaField.o.onIntro = function (I) {
       if (I.t >= 1.0) mark.classList.add("out");                   // the field's points take over from the drawn mark
-      var op = smooth(1.7, 2.8, I.t);
+      var op = smooth(2.2, 3.15, I.t);   // the words come in once they are near their size, not while still huge
       layers.forEach(function (L) {
         L.el.style.transformOrigin = (I.F.x - L.x) + "px " + (I.F.y - L.y) + "px";
         L.el.style.transform = "translate(" + (I.S.x - I.F.x) + "px," + (I.S.y - I.F.y) + "px) scale(" + I.z + ")";
         L.el.style.opacity = op;
       });
-      if (I.t >= 3.0) finish();
+      if (I.t >= 3.2) finish();
     };
-    seaField.startIntro(pts, size, rest);
+    seaField.startIntro(pts, size, rest, W < 700 ? 2.2 : 3.2);   // a shorter pull-back on phones, where the scaled words would sweep past the screen
     setTimeout(finish, 6000);                                         // never leave the page hidden
     var skip = function () { if (!done) { seaField.skipIntro(); finish(); } };
     ["wheel", "touchstart", "keydown", "pointerdown"].forEach(function (ev) { window.addEventListener(ev, skip, { once: true, passive: true }); });
