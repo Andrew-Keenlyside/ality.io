@@ -291,9 +291,18 @@
   // where the reader is: 0 at the first chapter's middle, 1 at the second's, 2 at the third's;
   // below 0 (down to -1) while the first chapter is still coming up the screen
   Relief.prototype.progress = function () {
-    // measured against the middle of where the chapters are read: the screen centre, or on phones (relief along the foot) the upper part
-    var H = window.innerHeight, ref = this.W > window.innerWidth * 0.9 ? H * 0.32 : H / 2;
-    var c = this.sections.map(function (s) { var b = s.getBoundingClientRect(); return b.top + b.height / 2 - ref; });
+    var H = window.innerHeight;
+    if (this.W > window.innerWidth * 0.9) {
+      // phones: the relief comes up after the problem, and the new supplier arrives as it does; after that
+      // each shape changes as the next chapter's top reaches the middle of the reading area above it
+      var st = this.stage.getBoundingClientRect().top, rise = Math.max(0, Math.min(1, (st - H * 0.62) / (H * 0.38)));
+      var tops = this.sections.slice(1).map(function (s) { return s.getBoundingClientRect().top; });
+      var q = 0;
+      tops.forEach(function (t) { q += Math.max(0, Math.min(1, (H * 0.55 - t) / (H * 0.4))); });
+      return q > 0 ? q : -rise;
+    }
+    // beside the chapters: measured against the screen centre
+    var c = this.sections.map(function (s) { var b = s.getBoundingClientRect(); return b.top + b.height / 2 - H / 2; });
     if (c[0] >= 0) return -Math.min(1, c[0] / (H * 0.9));
     for (var i = 0; i < c.length - 1; i++) if (c[i] <= 0 && c[i + 1] > 0) return i + (-c[i]) / (c[i + 1] - c[i]);
     return c.length - 1;

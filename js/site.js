@@ -95,7 +95,9 @@
         sy = sy === null || !dt ? y : sy + (y - sy) * Math.min(1, dt * 4.5);
         if (Math.abs(y - sy) > 0.5) f.movedAt = performance.now();
         f.cam.y = sy * 0.32;                                  // the seabed drifts past slower than the page: you travel over it
-        if (band) { f.deepY = band.getBoundingClientRect().top + 20; f.deepSoft = 110; }   // deep water begins above the close
+        // deep water begins a little above the close and darkens slowly over half a screen, finishing before the close's words
+        // (on phones it starts where the chapters end, so it never meets the relief's paper)
+        if (band) { var narrow = window.innerWidth <= 960; f.deepY = band.getBoundingClientRect().top + (narrow ? 170 : 100); f.deepSoft = narrow ? 170 : 260; }
         var idx = 0;
         chapters.forEach(function (c, i) { if (c.getBoundingClientRect().top <= H * 0.55) idx = i; });
         if (idx !== active) setChapter(idx);

@@ -258,9 +258,12 @@ html.intro .nav, html.intro .hero-copy { transition: none; will-change: transfor
   .story:not(.flat) .covers .intro { position: static; }
 }
 @media (max-width: 960px) {
-  /* on narrower screens the relief rides along the foot of the screen; the chapters are read above it */
-  .story:not(.flat) .stage { position: sticky; bottom: 0; z-index: 2; height: 38vh; height: 38svh; background: linear-gradient(rgba(248, 248, 245, 0), var(--paper) 16%); }
+  /* on narrower screens the relief comes up after the problem, then rides along the foot of the screen
+     (stuck where its top meets 62% of the screen) while the rest of the chapters are read above it */
+  .story:not(.flat) .stage { position: sticky; top: 62vh; top: 62svh; z-index: 2; height: 38vh; height: 38svh; background: linear-gradient(rgba(248, 248, 245, 0), var(--paper) 16%); }
   .page-home .story:not(.flat) .sec { min-height: 0; padding-top: var(--s5); }
+  /* room after the last chapter, so its words clear the relief before the story ends */
+  .page-home .story:not(.flat) > .sec:last-of-type { padding-bottom: calc(38vh + var(--s4)); padding-bottom: calc(38svh + var(--s4)); }
 }
 /* the two kept sides stack once the chapter column is too narrow for them side by side */
 @media (min-width: 961px) and (max-width: 1180px) {
