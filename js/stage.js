@@ -301,7 +301,7 @@
     var S = this.S, still = REDUCED || !dt;
     if (!still) S.t += dt * 0.6;
     var target = this.progress();
-    this.p = this.pp === null || still ? target : this.p + (target - this.p) * Math.min(1, dt * 5);
+    this.p = this.pp === null || still ? target : this.p + (target - this.p) * Math.min(1, dt * 2.8);   // the relief settles just after the scroll, never jumps with it
     this.pp = this.p;
     var pc = Math.max(0, this.p), i0 = Math.min(1, Math.floor(pc)), m = smooth(0.3, 0.7, pc - i0);
     // the new supplier comes in from the edge and rises as the first chapter arrives

@@ -75,24 +75,32 @@
       row.addEventListener("mouseenter", function () { if (relief) { relief.lit = i; relief.kick(); } });
       row.addEventListener("mouseleave", function () { if (relief) { relief.lit = -1; relief.kick(); } });
     });
+    var sy = null;
+    window.addEventListener("scroll", function () { if (seaField) { seaField.movedAt = performance.now(); seaField.kick(); } }, { passive: true });
     var smoothS = function (a, b, x) { var t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
     seaField = new Field(sea, {
       seed: 7, nodes: 72, minNodes: 40, linkDist: 96, pointer: window, liveBanks: true, deep: true, deepAlpha: 0.78,
       banks: function () {
+        // clear water behind each text block; in the intro the text is still scaled up around the mark, so it clears only as the text lands
+        var k = seaField && seaField.intro ? smoothS(2.2, 3.0, seaField.intro.t) : 1;
         return onScreen().slice(0, 8).map(function (r) {
-          return { x: r.x + r.w / 2, y: r.y + r.h / 2, rx: r.w * 0.62 + 56, ry: r.h * 0.66 + 44, amp: -0.66, p: 2 };
+          return { x: r.x + r.w / 2, y: r.y + r.h / 2, rx: r.w * 0.62 + 68, ry: r.h * 0.66 + 54, amp: -0.74 * k, p: 2 };
         });
       },
-      exclude: function () { return onScreen(); },
+      exclude: function () { return seaField && seaField.intro && seaField.intro.t < 2.6 ? [] : onScreen(); },
       tick: function (f, dt) {
         var H = window.innerHeight, y = window.scrollY || window.pageYOffset || 0;
-        f.cam.y = y * 0.32;                                   // the seabed drifts past slower than the page: you travel over it
+        // the seabed follows the scroll with a little inertia, so a jump of the wheel becomes a glide;
+        // the clear water behind the text still follows the text exactly
+        sy = sy === null || !dt ? y : sy + (y - sy) * Math.min(1, dt * 4.5);
+        if (Math.abs(y - sy) > 0.5) f.movedAt = performance.now();
+        f.cam.y = sy * 0.32;                                  // the seabed drifts past slower than the page: you travel over it
         if (band) { f.deepY = band.getBoundingClientRect().top + 20; f.deepSoft = 110; }   // deep water begins above the close
         var idx = 0;
         chapters.forEach(function (c, i) { if (c.getBoundingClientRect().top <= H * 0.55) idx = i; });
         if (idx !== active) setChapter(idx);
         // the seabed belongs to the hero, and to the deep water of the close; between them the relief beside the chapters carries it
-        f.lines.paper = 1 - smoothS(H * 0.1, H * 0.85, y); f.lines.deep = 1;
+        f.lines.paper = 1 - smoothS(H * 0.1, H * 0.85, sy); f.lines.deep = 1;
       }
     });
     fields.push(seaField);

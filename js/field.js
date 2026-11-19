@@ -316,7 +316,10 @@
   Field.prototype.loop = function (now) {
     if (!this.running) return;
     var dt = Math.min(0.1, (now - this.last) / 1000);
-    if (dt >= 1 / 45) { this.last = now; this.frame(dt, false); }
+    // at rest the seabed is slow and can draw every other frame; while the page moves (or in the intro)
+    // it draws every frame, so the clear water behind the text keeps up with the text
+    var lively = this.intro || now - (this.movedAt || 0) < 600;
+    if (dt >= 1 / 45 || (lively && dt > 0.004)) { this.last = now; this.frame(dt, false); }
     var self = this; requestAnimationFrame(function (t) { self.loop(t); });
   };
 
@@ -379,7 +382,7 @@
       }
       n.sx = this.toScreenX(n.x); n.sy = this.toScreenY(n.y);
       // with live banks the text moves over the network, so points under it fade rather than jump away
-      n.ex = this.inExclude(n.sx, n.sy, 6);
+      n.ex = this.inExclude(n.sx, n.sy, 14);
       if (!I && (n.sx < -8 || n.sy < -8 || n.sx > this.W + 8 || n.sy > this.H + 8 || (n.ex && !this.o.liveBanks))) {
         this.spawn(n); n.sx = this.toScreenX(n.x); n.sy = this.toScreenY(n.y); n.ex = false;
       }
@@ -402,7 +405,8 @@
         var A = N[a], B = N[b], ix = a * NN + b, tgt = 0;
         if (A.L !== B.L && !A.ex && !B.ex && A.linked < 3 && B.linked < 3) {
           var dx = A.dx - B.dx, dy = A.dy - B.dy, dd = dx * dx + dy * dy;
-          if (dd < LD * LD) { tgt = Math.min(1, (1 - Math.sqrt(dd) / LD) * 1.4); A.linked++; B.linked++; }
+          if (dd < LD * LD && !this.inExclude((A.dx + B.dx) / 2, (A.dy + B.dy) / 2, 16)) {   // no link across the words
+            tgt = Math.min(1, (1 - Math.sqrt(dd) / LD) * 1.4); A.linked++; B.linked++; }
         }
         var v = this.pa[ix] += (tgt - this.pa[ix]) * ease;
         if (v < 0.01) continue;
