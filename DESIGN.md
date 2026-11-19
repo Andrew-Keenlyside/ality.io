@@ -8,14 +8,14 @@ colors:
   ink-3: "#6a7178"
   rule: "rgba(21, 25, 28, 0.16)"
   slate: "#23404e"
-  blue: "#1f5bd6"
-  blue-deep: "#16429e"
+  blue: "#406bb5"
+  blue-deep: "#3a588d"
   night: "#121a1f"
   night-ink: "#eef1f0"
   night-ink-2: "#aab5b8"
   night-line: "#9db3bd"
   night-node: "#c9d5da"
-  blue-night: "#6ea8ff"
+  blue-night: "#9cb0d3"
 typography:
   display:
     fontFamily: "Archivo, Archivo Fallback, Helvetica Neue, Arial, sans-serif"
@@ -117,7 +117,7 @@ A near-neutral paper and ink palette with a deep slate for the field and a singl
 
 ### Neutral
 - **Pale Paper** (paper): page ground and field ground. Near-neutral with the faintest warm cast.
-- **Ink** (ink): headings, body on the hero, strong rules (top of ruled lists, footer top), outlined buttons, logo.
+- **Ink** (ink): headings, body on the hero, strong rules (top of ruled lists, footer top), outlined buttons, the wordmark.
 - **Ink 2** (ink-2): secondary text, ledes outside the hero, descriptions in lists.
 - **Ink 3** (ink-3): scrollbar thumb; least emphasis.
 - **Hairline** (rule): dividers between list rows and between principles.
@@ -167,7 +167,7 @@ Flat. Depth comes from the field behind the content and from the light/night inv
 
 ## Shapes
 
-Square-ish: every corner that exists is 2px (buttons, outlined nav CTA, menu, portraits). Lines are the main shape language: 1px hairlines, 1px ink rules to open and close a list, a dashed limit line (14px dash, 6px gap, short cross tick) for the confidential boundary, and a 2px blue rule for what crosses it. The logo is the same vocabulary: three turbine blades drawn as graph edges ending in node rings around a hub ring.
+Square-ish: every corner that exists is 2px (buttons, outlined nav CTA, menu, portraits). Lines are the main shape language: 1px hairlines, 1px ink rules to open and close a list, a dashed limit line (14px dash, 6px gap, short cross tick) for the confidential boundary, and a 2px blue rule for what crosses it. The logo is the same vocabulary: three turbine blades drawn as graph edges ending in node rings around a hub ring, in Mid blue (blue) beside an ink wordmark; the favicon and icons are blue too (pale night blue on a dark browser).
 
 ## Components
 
@@ -191,7 +191,20 @@ Three columns; blue tabular numerals in a 30px column, title and ink-2 text besi
 Two ruled lists of what each side keeps, either side of a dashed chart-style limit line labelled "Confidential boundary" in small tracked capitals beside it; a 2px blue rule closes the block with "Only the result crosses." in blue. No nodes or drawn graph.
 
 ### Contour field (signature)
-WebGL contour lines from a summed-wave height field: thin lines (0.36px half-width at 55% opacity) with every fifth line heavier (0.62px, full opacity), fading out at the top and bottom of the level range. Nodes ride the lines and link with blue strokes inside about 90px. On the hero the pointer raises the field locally and the lines fall quiet behind the copy and nav. Shallows (contour 12 and 15 up from the lowest level) are tinted in two steps. Variants: hero (64 nodes, pointer, one shoal bank on the right), the night close (46 nodes, pointer, slower, 78% line alpha, quiet behind the copy) and still portraits (no motion). Reduced motion stops the animation.
+WebGL contour lines from a summed-wave height field: thin lines (0.36px half-width at 55% opacity) with every fifth line heavier (0.62px, full opacity), fading out at the top and bottom of the level range. Nodes ride the lines and link with blue strokes inside about 90px; links ease in and out, and a point is drawn only while it is linked, so lone points fade away rather than blink. On the hero the pointer raises the field locally and the lines fall quiet behind the copy and nav. Shallows (contour 12 and 15 up from the lowest level) are tinted in two steps. Variants: hero (64 nodes, pointer, one shoal bank on the right), the night close (46 nodes, pointer, slower, 78% line alpha, quiet behind the copy) and still portraits (no motion). Reduced motion stops the animation.
+
+### Home journey (signature)
+The home page is one seabed behind everything: a fixed full-screen field that the page travels over (the seabed drifts at a third of the scroll speed), with each section a full-screen chapter that steers it:
+- **Intro** (once a visit; skipped on any input; never with reduced motion; about 3 s): the mark turns in, alone on paper, in Mid blue. Its hub and three rings are four real points of the network, placed so that, seen from 3.2x close up, they sit exactly on the mark. The drawn mark hands over to them, the contours open outward from it, and the camera pulls back and pans until the mark rests as a small linked cluster in the hero's open water. The nav and the hero copy sit on the same plane and scale down into place with the seabed, coming into view as it opens. The seabed holds still during the move, then the page carries on.
+Below the hero the seabed (contours and network) fades out over the first screen of scrolling, and the three middle chapters become a story (`.story`): the text in the left column on clean paper, and one seabed relief pinned in the right column (`.stage`, `js/stage.js`). The relief is the same contours seen from a low angle in perspective, dissolving into the paper at its rim, with the network's points sitting on it. It is one terrain that changes shape with each chapter, its points flowing between places and the view turning to show each shape best, rather than one drawing replacing another:
+- **The problem:** one broad rise with shoulders, the supply chain, carrying a large network (16 points); a small new rise, a supplier, slides in from the edge and grows as the chapter comes up the screen. Each links only among its own points. (Two equal peaks were tried first and looked odd: user, 2026-11-19.)
+- **Confidential by design:** the two draw a little apart, the view turns to face the trench, and a pale boundary stands in it with a dashed top edge and a dashed trace along the floor (the page's limit line, in the relief). One heavier blue link arcs over it with a point running along it, marked where it crosses: only the result crosses.
+- **What we look at:** the terrain settles into five uneven ridges from a centre, one per item; hovering a row lifts its ridge and lights its links.
+Below 961px the relief rides along the top of the screen (40svh, fading into the paper at its foot) while the chapters pass beneath it; from 961 to 1180px the boundary's two sides stack so the text column stays readable. Without WebGL the story falls back to full-width chapters (`.story.flat`).
+- **Contact:** the close is deep water again, with the full seabed and the loose network, as before.
+A smaller set of drawn cluster "formations" in reserved spaces was tried and dropped as too slight (user, 2026-11-19).
+
+Text blocks marked `data-calm` push the field down behind them as they scroll past, and points under them fade. The cursor is a node: the field swells a little behind it, trailing, and nearby points link to it. A chapter rail on the right (from 1101px) shows the chapters as a small graph; its line fills blue to the current chapter, and a chapter's name shows briefly as it arrives. Section headings arrive word by word, coming into focus. All motion is off with reduced motion; the field then redraws still as the page scrolls.
 
 ### Close (night field)
 Full-bleed night field, at least 520px tall, with the 7:5 close grid centred in it: a large headline and night-ink-2 text left, the blue button right. The footer follows on paper with no top rule. A sector list was tried here and removed: it claimed more than the company can show (user, 2026-11-19).

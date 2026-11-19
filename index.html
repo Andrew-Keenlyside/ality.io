@@ -17,9 +17,18 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/archivo-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/site.css">
-<script>document.documentElement.classList.add("js")</script>
+<script>
+(function () {
+  var d = document.documentElement; d.classList.add("js");
+  // the intro plays once a visit, never when motion is reduced, and can never hide the page for long
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  try { if (sessionStorage.getItem("ality-intro")) return; } catch (e) {}
+  d.classList.add("intro");
+  setTimeout(function () { d.classList.remove("intro"); }, 6000);
+})();
+</script>
 </head>
-<body>
+<body class="page-home">
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <g id="blade">
@@ -42,11 +51,22 @@
 </svg>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="hero field-host" id="hero">
-  <canvas class="field" aria-hidden="true"></canvas>
-  <canvas class="overlay" aria-hidden="true"></canvas>
+<!-- one seabed behind the whole page; it changes with each chapter -->
+<div class="sea" aria-hidden="true"><canvas class="field"></canvas><canvas class="overlay"></canvas></div>
+<svg class="intro-mark" aria-hidden="true" viewBox="0 0 100 100"><use href="#mark"/></svg>
 
-  <nav class="nav" aria-label="Main">
+<nav class="rail" aria-label="Chapters">
+  <ol>
+    <li><a href="#hero"><span>Intro</span></a></li>
+    <li><a href="#help"><span>The problem</span></a></li>
+    <li><a href="#how"><span>Confidential by design</span></a></li>
+    <li><a href="#covers"><span>What we look at</span></a></li>
+    <li><a href="#contact"><span>Contact</span></a></li>
+  </ol>
+</nav>
+
+<header class="hero" id="hero" data-chapter="intro">
+  <nav class="nav" aria-label="Main" data-calm>
     <a class="brand" href="./" aria-label="Ality Intelligence, home">
       <svg aria-hidden="true"><use href="#mark"/></svg>
       <span class="wordmark"><b>Ality</b><span>Intelligence</span></span>
@@ -62,7 +82,7 @@
 
   <div class="hero-copy">
     <div class="wrap">
-      <div class="inner" data-enter>
+      <div class="inner" data-enter data-calm>
         <h1>Supply chains, planned in confidence.</h1>
         <p class="lede">We help a supplier and a project team see how well a product fits, and where the risks lie, without either side handing over its designs, prices or IP.</p>
         <div class="actions">
@@ -75,14 +95,17 @@
 </header>
 
 <main id="main">
+ <div class="story">
+  <!-- one seabed relief, pinned beside the chapters; it changes shape with each one -->
+  <div class="stage" aria-hidden="true"><canvas class="relief"></canvas><canvas class="net"></canvas></div>
 
-  <section class="sec" id="help" aria-labelledby="help-h">
+  <section class="sec" id="help" aria-labelledby="help-h" data-chapter="problem">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 id="help-h">Integrating new work into complex supply chains</h2>
+      <div class="sec-head" data-calm>
+        <h2 id="help-h" data-words>Integrating new work into complex supply chains</h2>
         <p class="lede">Large projects run on supply chains many tiers deep. Bringing in a new supplier is slow, because each side guards what matters most to it.</p>
       </div>
-      <div class="pair">
+      <div class="pair" data-calm>
         <div class="side" data-reveal>
           <h3>Suppliers</h3>
           <p>You make something a large project could use: a component, a material, a vessel or a service. Proving it fits usually means long questionnaires and sharing detail you would rather keep.</p>
@@ -95,13 +118,13 @@
     </div>
   </section>
 
-  <section class="sec" id="how" aria-labelledby="how-h" style="padding-top:0">
+  <section class="sec" id="how" aria-labelledby="how-h" data-chapter="confidential">
     <div class="wrap">
-      <div class="sec-head">
-        <h2 id="how-h">Confidential by design</h2>
+      <div class="sec-head" data-calm>
+        <h2 id="how-h" data-words>Confidential by design</h2>
         <p class="lede">Each side briefs us separately and keeps its own material. We work from a shared network of the supply chain, built from public data and expert input, so the answer is sharp without either side opening up.</p>
       </div>
-      <div class="boundary">
+      <div class="boundary" data-calm>
         <div class="keep">
           <h3>Stays with the supplier</h3>
           <ul>
@@ -121,7 +144,7 @@
         </div>
         <p class="crosses"><strong>Only the result crosses.</strong> Each side agrees beforehand what of its material the assessment may draw on.</p>
       </div>
-      <ol class="steps">
+      <ol class="steps" data-calm>
         <li data-reveal><h3>Each side briefs us separately</h3><p>The supplier describes the product. The project team describes what it needs. Neither sees the other's material.</p></li>
         <li data-reveal><h3>We work out the fit</h3><p>Technical, commercial and logistical requirements, checked against the supply chain the product would join.</p></li>
         <li data-reveal><h3>Both sides get the same answer</h3><p>One fit-and-risk assessment: where it fits, where the gaps are, and what would close them.</p></li>
@@ -129,13 +152,13 @@
     </div>
   </section>
 
-  <section class="sec" id="covers" aria-labelledby="covers-h" style="padding-top:0">
+  <section class="sec" id="covers" aria-labelledby="covers-h" data-chapter="assess">
     <div class="wrap covers">
-      <div class="intro">
-        <h2 id="covers-h">What we look at</h2>
+      <div class="intro" data-calm>
+        <h2 id="covers-h" data-words>What we look at</h2>
         <p class="lede">Each assessment is written for one product and one supply chain, and both sides read the same version.</p>
       </div>
-      <dl>
+      <dl data-calm>
         <div data-reveal><dt>Technical fit</dt><dd>Specifications, standards and certification, checked against what the project requires.</dd></div>
         <div data-reveal><dt>Capacity and timing</dt><dd>Whether volumes and lead times match the build programme.</dd></div>
         <div data-reveal><dt>Logistics</dt><dd>The ports, vessels, transport and storage the product depends on.</dd></div>
@@ -144,16 +167,14 @@
       </dl>
     </div>
   </section>
-
+ </div>
 </main>
 
-<footer id="contact">
-  <div class="close-band night field-host">
-  <canvas class="field" aria-hidden="true"></canvas>
-  <canvas class="overlay" aria-hidden="true"></canvas>
-  <div class="wrap close">
+<footer id="contact" data-chapter="contact">
+  <div class="close-band night">
+  <div class="wrap close" data-calm>
     <div>
-      <h2>Let’s map your network.</h2>
+      <h2 data-words>Let’s map your network.</h2>
       <p>Tell us what you make, or what your project needs. We will tell you plainly whether we can help.</p>
     </div>
     <div class="contact">
@@ -180,6 +201,7 @@
 </footer>
 
 <script src="js/field.js"></script>
+<script src="js/stage.js"></script>
 <script src="js/site.js"></script>
 </body>
 </html>

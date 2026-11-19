@@ -21,6 +21,8 @@ OWN-WORLD: Warm paper ground, slate contour lines (thin, every fifth heavier), b
 
 STORY: Visitor learns Ality plans supply chains in confidence; reads the problem of integrating new work from both sides; sees what each side keeps behind the confidential boundary and that only the result crosses, then the three steps; reads what an assessment looks at; ends on the night field, asked "Let's map your network", and writes to hello@ality.io. (A sectors band was removed on 2026-11-19: "Night band is weakest and least visually appealing. Also makes very broad claims.")
 
+INTERACTION (2026-11-19, user: "More like an introductory presentation than just a web page"): an intro in which the mark comes apart into the network and the view pulls back onto the hero contours; the cursor as a node; one seabed behind the whole page that changes per chapter (split, fault, calm, deep water); chapter rail; word-by-word headings. References studied: bleibtgleich.dev (spine line, one sentence per screen, words arriving), byotone.com (one persistent visual that changes per chapter, chapter progress).
+
 FIRST VIEWPORT: Full-bleed animated contour field, no frame; lines fall quiet behind the words; nav across the top; large headline lower left, one-sentence lede, blue primary action and a secondary link; pointer raises the field locally; nodes link in blue when close.
 
 FORM: Admiralty Chart (list position 1, chosen over the roll), abstracted at the user's request. seed:e479a4db9f876ed1.

@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#15191c">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#406bb5">
   <title>Ality Intelligence</title>
-  <style>@media (prefers-color-scheme: dark){*{fill:#eef1f0}circle{fill:none;stroke:#eef1f0}}</style>
+  <style>@media (prefers-color-scheme: dark){*{fill:#9cb0d3}circle{fill:none;stroke:#9cb0d3}}</style>
   <!-- One blade: a graph edge with the blade's chord on its trailing side, ending in a node; repeated at 120 degrees round the hub. -->
   <defs>
     <g id="b">
       <rect x="9.5" y="-2.1" width="27.5" height="4.2"/>
       <path d="M9.5 1.5 L14.6 8.1 Q15.6 9.9 17.6 9.4 L36.5 1.5 Z"/>
-      <circle cx="42" cy="0" r="5.4" fill="none" stroke="#15191c" stroke-width="4.2"/>
+      <circle cx="42" cy="0" r="5.4" fill="none" stroke="#406bb5" stroke-width="4.2"/>
     </g>
   </defs>
   <g transform="translate(50 59)">
     <use href="#b" transform="rotate(-90)"/>
     <use href="#b" transform="rotate(30)"/>
     <use href="#b" transform="rotate(150)"/>
-    <circle r="7.8" fill="none" stroke="#15191c" stroke-width="5"/>
+    <circle r="7.8" fill="none" stroke="#406bb5" stroke-width="5"/>
   </g>
 </svg>
