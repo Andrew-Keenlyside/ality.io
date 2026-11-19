@@ -1,0 +1,113 @@
+{
+  "title": "Choose the visual world for Ality Intelligence",
+  "question": "The roll assigned Safe Water (offshore buoyage marks). Keep it, take an alternate, or re-roll. All three keep your contour-and-nodes background and the turbine-graph logo.",
+  "options": [
+    {
+      "id": "assigned",
+      "kind": "assigned",
+      "label": "Safe Water",
+      "kicker": "THE ROLL",
+      "lineage": "IALA buoyage: cardinal, lateral and safe-water marks every offshore crew reads",
+      "thesis": "Ality marks where a supplier and a project can meet safely, in the colour system offshore people already trust.",
+      "palette": ["#eef3f2", "#0e2a33", "#f4c20d", "#111111", "#c8102e", "#00843d"],
+      "materials": ["painted steel buoy bands", "chart contour linework", "stencilled hull lettering"],
+      "viewport": "Pale chart-sea ground with your animated contours and linking nodes; wide grotesk headline; the main action sits on a yellow-and-black cardinal band.",
+      "risk": "Buoy yellow shouts; scattered around it reads as a site-safety sign rather than a brand.",
+      "raised": [
+        {"from": "challenger-loteria", "raise": "Every section is named and numbered like a chart's list of marks."},
+        {"from": "challenger-racing", "raise": "States commit totally: a chosen item floods with its mark colour, nothing half-tinted."},
+        {"from": "challenger-steprow", "raise": "One unbroken contour line runs the full page as its reading spine."},
+        {"from": "challenger-zine", "raise": "The three-step explanation draws itself on as the visitor reaches it."},
+        {"from": "challenger-sneaker", "raise": "One label grid (name, code, value) rules every card on the site."}
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "kind": "pick",
+      "label": "Admiralty Chart",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "UK Hydrographic Office paper charts",
+      "thesis": "The site is a working sea chart: depth tints, soundings and a graticule border frame every page.",
+      "palette": ["#f4efe1", "#dbe9ee", "#a9cbd8", "#1a1a1a", "#b0177a"],
+      "materials": ["chart paper", "depth tints", "graticule tick border", "italic soundings"],
+      "viewport": "The hero is the chart itself: contours over depth tints, lat/long ticks round the edge, magenta notice for the main action.",
+      "risk": "The most expected reading of your contour idea; can look like a GIS app if the type is timid.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-plankton",
+      "kind": "challenger",
+      "catalogId": "reefs-bioluminescent-nocturnal-plankton-wake-stars",
+      "label": "Night Wake",
+      "verdict": "competitive",
+      "lineage": "bioluminescent plankton lighting a ship's wake at night",
+      "thesis": "Links light up like plankton wherever two contour nodes meet, then fade back to dark sea.",
+      "palette": ["#04080c", "#1e6bff", "#5fe3ff", "#e8f4f8"],
+      "materials": ["black night sea", "living blue light", "fading trails"],
+      "viewport": "Black sea field; contours glow faintly and flare blue where the pointer passes; white headline over it.",
+      "case": "Holds on audience (offshore at night is real to them); loses on clarity, the mood outweighs the offer.",
+      "risk": "Dark-with-glow is a common AI look; procurement readers may find it moody rather than trustworthy.",
+      "comp": ".impeccable/mocks/decision/challenger-plankton.webp",
+      "hero": "https://impeccable.style/worlds/cards/reefs-bioluminescent-nocturnal-plankton-wake-stars-hero.webp"
+    },
+    {
+      "id": "challenger-loteria", "kind": "challenger", "catalogId": "vernacular-ephemera-loteria-tabla-night",
+      "label": "Lotería Night", "verdict": "declined", "lineage": "Mexican lotería cards",
+      "thesis": "Each capability a numbered picture card.", "palette": ["#f6c500", "#e5487a", "#2bb3b1", "#111111"],
+      "materials": ["flat carnival colour", "black contour ink"], "viewport": "A tabla grid of services.",
+      "case": "Fuses poorly: energy engineers do not see themselves in a party game.", "risk": "Reads as play.",
+      "kept": "Every item named and numbered in the same breath.",
+      "hero": "https://impeccable.style/worlds/cards/vernacular-ephemera-loteria-tabla-night-hero.webp"
+    },
+    {
+      "id": "challenger-racing", "kind": "challenger", "catalogId": "digital-design-canon-antialiased-racing-league",
+      "label": "Racing League", "verdict": "declined", "lineage": "fictional racing liveries",
+      "thesis": "Ality as a team livery.", "palette": ["#ff6a13", "#d7ff1f", "#3a3d42", "#ffffff"],
+      "materials": ["decals", "speed streaks"], "viewport": "Liveried hero racing left to right.",
+      "case": "Fuses poorly: speed is the wrong promise for careful qualification.", "risk": "Reads as hype.",
+      "kept": "Total state commitment: selection floods with colour.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-antialiased-racing-league-hero.webp"
+    },
+    {
+      "id": "challenger-steprow", "kind": "challenger", "catalogId": "signals-instruments-drum-machine-step-row",
+      "label": "Step Row", "verdict": "declined", "lineage": "early-80s drum machines",
+      "thesis": "The assessment as a programmed sequence.", "palette": ["#222222", "#e2342b", "#f08a24", "#f2d23c"],
+      "materials": ["silkscreen panel", "LED glow"], "viewport": "Sixteen-step row as the page spine.",
+      "case": "Fuses poorly: no link to energy or supply chains.", "risk": "Reads as a music toy.",
+      "kept": "One unbroken line as the page's spine.",
+      "hero": "https://impeccable.style/worlds/cards/signals-instruments-drum-machine-step-row-hero.webp"
+    },
+    {
+      "id": "challenger-zine", "kind": "challenger", "catalogId": "hand-drawn-zine-explainer",
+      "label": "Napkin Zine", "verdict": "declined", "lineage": "hand-drawn technical zines",
+      "thesis": "Explain fit assessment like a friend's sketch.", "palette": ["#f7f1e3", "#111111", "#ffe14d", "#ff7eb6"],
+      "materials": ["marker ink", "highlighter"], "viewport": "Doodled diagram hero.",
+      "case": "Fuses poorly: too casual for confidential commercial work.", "risk": "Undercuts trust.",
+      "kept": "Explanation drawn on step by step.",
+      "hero": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer-hero.webp"
+    },
+    {
+      "id": "challenger-sneaker", "kind": "challenger", "catalogId": "textiles-weave-drape-fashion-sneaker-box-stacks",
+      "label": "Box Stacks", "verdict": "declined", "lineage": "sneaker archive walls",
+      "thesis": "Suppliers as labelled boxes on a wall.", "palette": ["#d2691e", "#111111", "#f7f5f0"],
+      "materials": ["box board", "tissue"], "viewport": "Wall of end labels.",
+      "case": "Fuses poorly: retail collecting is far from offshore procurement.", "risk": "Reads as a shop.",
+      "kept": "One label grid ruling every card.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-sneaker-box-stacks-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": false},
+  "canon": true,
+  "canonCard": {
+    "kind": "canon",
+    "label": "The category standard",
+    "thesis": "What supply-chain intelligence companies ship, executed well.",
+    "palette": ["#0b1f33", "#ffffff", "#2f7d8a"],
+    "materials": ["navy hero", "network graph", "product screenshot"],
+    "viewport": "Navy hero with a network visual, headline left, demo button, logo row below.",
+    "risk": "Indistinguishable from Altana, Everstream and the old site by design."
+  },
+  "steer": true
+}

@@ -1,0 +1,401 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-15T09:38:45+00:00",
+  "title": "Design System: Ality Intelligence",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Pale Paper",
+        "canonical": "#f8f8f5",
+        "tonalRamp": [
+          "oklch(15% 0.002 100)",
+          "oklch(25% 0.003 100)",
+          "oklch(35% 0.004 100)",
+          "oklch(45% 0.005 100)",
+          "oklch(58% 0.006 100)",
+          "oklch(70% 0.004 100)",
+          "oklch(82% 0.003 100)",
+          "oklch(95% 0.002 100)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#15191c",
+        "tonalRamp": [
+          "oklch(15% 0.003 230)",
+          "oklch(25% 0.005 230)",
+          "oklch(35% 0.008 230)",
+          "oklch(45% 0.01 230)",
+          "oklch(58% 0.011 230)",
+          "oklch(70% 0.009 230)",
+          "oklch(82% 0.006 230)",
+          "oklch(95% 0.003 230)"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#474d53",
+        "tonalRamp": [
+          "oklch(15% 0.004 240)",
+          "oklch(25% 0.006 240)",
+          "oklch(35% 0.009 240)",
+          "oklch(45% 0.011 240)",
+          "oklch(58% 0.013 240)",
+          "oklch(70% 0.01 240)",
+          "oklch(82% 0.007 240)",
+          "oklch(95% 0.004 240)"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "#6a7178",
+        "tonalRamp": [
+          "oklch(15% 0.004 240)",
+          "oklch(25% 0.006 240)",
+          "oklch(35% 0.009 240)",
+          "oklch(45% 0.011 240)",
+          "oklch(58% 0.013 240)",
+          "oklch(70% 0.01 240)",
+          "oklch(82% 0.007 240)",
+          "oklch(95% 0.004 240)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(21, 25, 28, 0.16)",
+        "tonalRamp": [
+          "oklch(15% 0.003 230)",
+          "oklch(25% 0.005 230)",
+          "oklch(35% 0.008 230)",
+          "oklch(45% 0.01 230)",
+          "oklch(58% 0.011 230)",
+          "oklch(70% 0.009 230)",
+          "oklch(82% 0.006 230)",
+          "oklch(95% 0.003 230)"
+        ]
+      },
+      "slate": {
+        "role": "secondary",
+        "displayName": "Contour Slate",
+        "canonical": "#23404e",
+        "tonalRamp": [
+          "oklch(15% 0.014 225)",
+          "oklch(25% 0.023 225)",
+          "oklch(35% 0.032 225)",
+          "oklch(45% 0.041 225)",
+          "oklch(58% 0.047 225)",
+          "oklch(70% 0.036 225)",
+          "oklch(82% 0.025 225)",
+          "oklch(95% 0.014 225)"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Link Blue",
+        "canonical": "#1f5bd6",
+        "tonalRamp": [
+          "oklch(15% 0.052 350)",
+          "oklch(25% 0.086 350)",
+          "oklch(35% 0.121 350)",
+          "oklch(45% 0.155 350)",
+          "oklch(58% 0.18 350)",
+          "oklch(70% 0.138 350)",
+          "oklch(82% 0.097 350)",
+          "oklch(95% 0.052 350)"
+        ]
+      },
+      "blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Blue",
+        "canonical": "#16429e",
+        "tonalRamp": [
+          "oklch(15% 0.052 350)",
+          "oklch(25% 0.086 350)",
+          "oklch(35% 0.121 350)",
+          "oklch(45% 0.155 350)",
+          "oklch(58% 0.18 350)",
+          "oklch(70% 0.138 350)",
+          "oklch(82% 0.097 350)",
+          "oklch(95% 0.052 350)"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "#121a1f",
+        "tonalRamp": [
+          "oklch(15% 0.004 235)",
+          "oklch(25% 0.007 235)",
+          "oklch(35% 0.01 235)",
+          "oklch(45% 0.012 235)",
+          "oklch(58% 0.014 235)",
+          "oklch(70% 0.011 235)",
+          "oklch(82% 0.008 235)",
+          "oklch(95% 0.004 235)"
+        ]
+      },
+      "night-ink": {
+        "role": "neutral",
+        "displayName": "Night Ink",
+        "canonical": "#eef1f0",
+        "tonalRamp": [
+          "oklch(15% 0.001 170)",
+          "oklch(25% 0.002 170)",
+          "oklch(35% 0.003 170)",
+          "oklch(45% 0.004 170)",
+          "oklch(58% 0.005 170)",
+          "oklch(70% 0.004 170)",
+          "oklch(82% 0.003 170)",
+          "oklch(95% 0.001 170)"
+        ]
+      },
+      "night-ink-2": {
+        "role": "neutral",
+        "displayName": "Night Ink 2",
+        "canonical": "#aab5b8",
+        "tonalRamp": [
+          "oklch(15% 0.003 210)",
+          "oklch(25% 0.005 210)",
+          "oklch(35% 0.008 210)",
+          "oklch(45% 0.01 210)",
+          "oklch(58% 0.011 210)",
+          "oklch(70% 0.009 210)",
+          "oklch(82% 0.006 210)",
+          "oklch(95% 0.003 210)"
+        ]
+      },
+      "night-line": {
+        "role": "secondary",
+        "displayName": "Night Line",
+        "canonical": "#9db3bd",
+        "tonalRamp": [
+          "oklch(15% 0.007 220)",
+          "oklch(25% 0.011 220)",
+          "oklch(35% 0.016 220)",
+          "oklch(45% 0.02 220)",
+          "oklch(58% 0.024 220)",
+          "oklch(70% 0.018 220)",
+          "oklch(82% 0.013 220)",
+          "oklch(95% 0.007 220)"
+        ]
+      },
+      "night-node": {
+        "role": "secondary",
+        "displayName": "Night Node",
+        "canonical": "#c9d5da",
+        "tonalRamp": [
+          "oklch(15% 0.004 220)",
+          "oklch(25% 0.007 220)",
+          "oklch(35% 0.01 220)",
+          "oklch(45% 0.012 220)",
+          "oklch(58% 0.014 220)",
+          "oklch(70% 0.011 220)",
+          "oklch(82% 0.008 220)",
+          "oklch(95% 0.004 220)"
+        ]
+      },
+      "blue-night": {
+        "role": "primary",
+        "displayName": "Night Blue",
+        "canonical": "#6ea8ff",
+        "tonalRamp": [
+          "oklch(15% 0.046 355)",
+          "oklch(25% 0.077 355)",
+          "oklch(35% 0.108 355)",
+          "oklch(45% 0.139 355)",
+          "oklch(58% 0.161 355)",
+          "oklch(70% 0.124 355)",
+          "oklch(82% 0.087 355)",
+          "oklch(95% 0.046 355)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings; closing heading steps up to clamp(2.2rem, 1.3rem + 2.8vw, 3.8rem)."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "List items, steps, principles, names."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Short paragraph beside or under a headline, max 34em."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; 1rem under 560px."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons; nav links at 520 / 0.9688rem / wdth 106."
+      }
+    },
+    "shadows": [
+      {
+        "name": "menu-float",
+        "value": "0 12px 32px -12px rgba(21, 25, 28, 0.28)",
+        "purpose": "Mobile nav dropdown floating over the moving field; the only shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out-soft",
+        "value": "cubic-bezier(.2, .8, .2, 1)",
+        "purpose": "Arrow slide, list-row rule draw, entrance rise."
+      },
+      {
+        "name": "ease-draw",
+        "value": "cubic-bezier(.5, 0, .2, 1) 1.6s",
+        "purpose": "Two-sides graph edges drawing in on scroll."
+      },
+      {
+        "name": "ease-rotor",
+        "value": "cubic-bezier(.3, .7, .2, 1) .9s",
+        "purpose": "Logo rotor turns 120deg on hover."
+      },
+      {
+        "name": "state",
+        "value": ".18s ease",
+        "purpose": "Colour and underline state changes."
+      },
+      {
+        "name": "enter",
+        "value": "opacity .9s ease, transform 1s; 18px rise, 0.12s stagger",
+        "purpose": "Hero copy entrance; content visible without script; reduced motion disables."
+      },
+      {
+        "name": "field",
+        "value": "WebGL contour field; every fifth line heavier; node links within ~90px",
+        "purpose": "Signature ambient motion; stops under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "menu",
+        "value": "1000px"
+      },
+      {
+        "name": "stack",
+        "value": "860px"
+      },
+      {
+        "name": "phone",
+        "value": "560px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action per view: blue, 2px corners, arrow that slides on hover.",
+      "html": "<a class=\"ds-btn\" href=\"#\">Talk to us about an assessment<svg viewBox=\"0 0 18 18\" aria-hidden=\"true\"><path d=\"M3 9h11M10 5l4 4-4 4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\"/></svg></a>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:12px;padding:16px 22px 16px 24px;border:1px solid var(--blue,#1f5bd6);border-radius:2px;background:var(--blue,#1f5bd6);color:#fff;font-family:var(--font, Archivo, Arial, sans-serif);font-weight:600;font-size:1rem;line-height:1;font-variation-settings:'wdth' 108;text-decoration:none;transition:background-color .18s ease,transform .12s ease}.ds-btn svg{width:18px;height:18px;transition:transform .25s cubic-bezier(.2,.8,.2,1)}.ds-btn:hover{background:var(--blue-deep,#16429e);border-color:var(--blue-deep,#16429e)}.ds-btn:hover svg{transform:translateX(4px)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid var(--blue,#1f5bd6);outline-offset:3px}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "link",
+      "description": "Secondary action beside the primary button.",
+      "html": "<a class=\"ds-link\" href=\"#\">See how it works</a>",
+      "css": ".ds-link{color:var(--ink,#15191c);font-family:var(--font, Archivo, Arial, sans-serif);font-weight:560;font-variation-settings:'wdth' 108;text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:var(--rule,rgba(21,25,28,.16));text-underline-offset:.32em;transition:text-decoration-color .18s ease}.ds-link:hover{text-decoration-color:currentColor}.ds-link:focus-visible{outline:2px solid var(--blue,#1f5bd6);outline-offset:3px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-cta",
+      "description": "Plain links with a blue underline on hover and current page, then an outlined Contact.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">How it works</a><a href=\"#\" aria-current=\"page\">About</a><a class=\"ds-nav-cta\" href=\"#\">Contact</a></nav>",
+      "css": ".ds-nav{display:flex;gap:4px;align-items:center;background:var(--paper,#f8f8f5);font-family:var(--font, Archivo, Arial, sans-serif);}.ds-nav a{padding:10px 14px;color:var(--ink,#15191c);text-decoration:none;font-weight:520;font-size:.9688rem;font-variation-settings:'wdth' 106}.ds-nav a:hover,.ds-nav a[aria-current=page]{text-decoration:underline;text-decoration-color:var(--blue,#1f5bd6);text-decoration-thickness:2px;text-underline-offset:.36em}.ds-nav a.ds-nav-cta{border:1px solid var(--ink,#15191c);border-radius:2px;margin-left:10px;padding:10px 16px}.ds-nav a.ds-nav-cta:hover{background:var(--ink,#15191c);color:var(--paper,#f8f8f5);text-decoration:none}.ds-nav a:focus-visible{outline:2px solid var(--blue,#1f5bd6);outline-offset:3px}"
+    },
+    {
+      "name": "Ruled List",
+      "kind": "custom",
+      "refersTo": "ruled-list",
+      "description": "Term and description rows between hairlines, opened by an ink rule; blue line draws on hover.",
+      "html": "<dl class=\"ds-ruled\"><div><dt>Technical fit</dt><dd>Specifications, standards and certification, checked against what the project requires.</dd></div><div><dt>Logistics</dt><dd>The ports, vessels, transport and storage the product depends on.</dd></div></dl>",
+      "css": ".ds-ruled{margin:0;border-top:1px solid var(--ink,#15191c);font-family:var(--font, Archivo, Arial, sans-serif);color:var(--ink,#15191c)}.ds-ruled>div{display:grid;grid-template-columns:minmax(0,12em) minmax(0,1fr);gap:8px 32px;padding:28px 0;border-bottom:1px solid var(--rule,rgba(21,25,28,.16));position:relative}.ds-ruled>div::after{content:'';position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--blue,#1f5bd6);transition:width .5s cubic-bezier(.2,.8,.2,1)}.ds-ruled>div:hover::after{width:100%}.ds-ruled dt{font-weight:640;font-variation-settings:'wdth' 112;font-size:1.125rem;line-height:1.35}.ds-ruled dd{margin:0;color:var(--ink-2,#474d53)}"
+    },
+    {
+      "name": "Numbered Steps",
+      "kind": "custom",
+      "refersTo": "steps",
+      "description": "Three columns: blue tabular numerals beside title and text.",
+      "html": "<ol class=\"ds-steps\"><li><h3>Each side briefs us separately</h3><p>Neither sees the other's material.</p></li><li><h3>We work out the fit</h3><p>Checked against the supply chain the product would join.</p></li></ol>",
+      "css": ".ds-steps{list-style:none;margin:0;padding:0;counter-reset:s;font-family:var(--font, Archivo, Arial, sans-serif);color:var(--ink,#15191c)}.ds-steps li{counter-increment:s;display:grid;grid-template-columns:36px minmax(0,1fr);gap:4px 16px;padding:0 0 26px}.ds-steps li+li{padding-top:26px;border-top:1px solid var(--rule,rgba(21,25,28,.16))}.ds-steps li::before{content:counter(s);grid-row:span 2;font-weight:640;font-variation-settings:'wdth' 112;color:var(--blue,#1f5bd6);font-size:1.125rem;line-height:1.3;font-feature-settings:'tnum' 1}.ds-steps h3{margin:0;font-size:1.125rem;font-weight:640;font-variation-settings:'wdth' 112}.ds-steps p{margin:0;color:var(--ink-2,#474d53);font-size:1rem}"
+    },
+    {
+      "name": "Confidential Boundary",
+      "kind": "custom",
+      "refersTo": "boundary",
+      "description": "What each side keeps, either side of a dashed limit line; a blue rule for what crosses.",
+      "html": "<div class=\"ds-bd\"><div><h3>Stays with the supplier</h3><p>Prices and capacity</p></div><i></i><div><h3>Stays with the project team</h3><p>Commercial terms</p></div><p class=\"ds-x\"><b>Only the result crosses.</b></p></div>",
+      "css": ".ds-bd{display:grid;grid-template-columns:1fr 60px 1fr;border-top:1px solid var(--ink,#15191c);font-family:var(--font, Archivo, Arial, sans-serif);color:var(--ink,#15191c)}.ds-bd>div{padding:20px 0}.ds-bd h3{margin:0 0 10px;font-size:1.125rem;font-weight:640;font-variation-settings:'wdth' 112}.ds-bd p{margin:0;color:var(--ink-2,#474d53);border-top:1px solid var(--rule,rgba(21,25,28,.16));padding-top:10px}.ds-bd i{background:repeating-linear-gradient(to bottom,var(--ink,#15191c) 0 14px,transparent 14px 20px) center/1.5px 100% no-repeat}.ds-bd .ds-x{grid-column:1/-1;border-top:2px solid var(--blue,#1f5bd6);color:var(--blue,#1f5bd6);padding-top:14px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Moving Seabed",
+    "overview": "A pale paper ground carries an animated seabed: slate depth contours that drift like a tide, every fifth line heavier, the shallows tinted a little bluer in two steps, with small nodes riding the lines and joining in blue when they come close. Seabed and network are the two themes; the linking is the product made visible: two sides finding each other. The field is abstract, not a chart. Everything else on the page is quiet and editorial so the field and one blue can carry the meaning.\n\nType is a single family, Archivo, used wide for headings and at normal width for reading. Structure comes from hairline rules and generous section spacing rather than boxes: lists are ruled, nothing sits in a card. Corners are nearly square (2px). The close (\"Let's map your network.\") sits on a dark night field (pale lines on #121a1f) that the pointer can raise, so every page ends on the seabed.\n\nThe user's binding steer: the field is an abstract contour field, not a literal map. No neat line or border around the field, no graticule, no soundings or depth figures, no land fills, no map symbols (turbines, harbours, compass roses). Soundings and contour depth labels were tried again on 2026-11-18 and taken out for this reason.",
+    "keyCharacteristics": [
+      "Full-bleed contour field as the hero ground, fading out at its foot; never framed.",
+      "One accent, blue, reserved for links between things, the main action and anything that joins two sides.",
+      "Archivo in two widths: wide (wdth 112 to 120) for headings and the wordmark, normal for text.",
+      "Ruled lists and hairline dividers instead of cards.",
+      "2px corners everywhere a corner exists."
+    ],
+    "rules": [
+      {
+        "name": "The One Meaning Rule",
+        "body": "Blue means a connection or the action that starts one. It is never used as decoration, a section tint or a heading colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Field Reads From The Host Rule",
+        "body": "The field takes its colours from `--field-bg`, `--field-line`, `--field-node`, `--field-link`, `--field-shoal` and `--field-shoal-2` on its host element. A new field context (like night) is made by resetting those six, never by editing the script.",
+        "section": "colors"
+      },
+      {
+        "name": "The Width Axis Rule",
+        "body": "Hierarchy is carried by width and weight within Archivo (headings wdth 112, wordmark 115 to 120, labels 106 to 110), not by a second typeface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lockup Only Rule",
+        "body": "Uppercase tracked text appears in two places only: the wordmark's \"Intelligence\" line (0.32em) and the confidential boundary label (0.18em). Never as a label above a heading.",
+        "section": "typography"
+      },
+      {
+        "name": "The Field Is The Depth Rule",
+        "body": "Surfaces are flat and borderless. If something must stand off the field (a nav dropdown), give it a solid ground colour and a 1px line before reaching for a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do let the contour field run full bleed with no frame, fading into the page at its foot.",
+      "Do keep blue for connections and the main action, and keep it to one primary button per view.",
+      "Do make a new field context by resetting the six `--field-*` properties on the host.",
+      "Do structure content with ruled lists and hairlines (1px rule colour; 1px ink to open a list).",
+      "Do use Archivo's width axis for hierarchy: headings at wdth 112, text at normal width.",
+      "Do keep corners at 2px."
+    ],
+    "donts": [
+      "Don't make the field look like a literal map: no neat line or border, no graticule, no soundings or depth figures, no land fills, no map symbols.",
+      "Don't put content in cards or tinted boxes.",
+      "Don't use blue as decoration, a heading colour or a section background.",
+      "Don't add a second typeface or uppercase tracked labels above headings.",
+      "Don't add shadows to resting surfaces."
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "about.html"
+        ],
+        "createdAt": "2026-11-15T09:28:59.192Z",
+        "reason": "Claude: the How we work list on About is a ruled typographic list (rules between items, text on the content edge), not a boxed container"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-19T00:17:33.344Z",
+        "reason": "False positive on #reach: a full-bleed field band whose text is absolutely placed; the heading sits inside .wrap's gutter and sector names stay 55px+ from the edges at 390-1440 (checked in renders)."
+      }
+    ]
+  }
+}
