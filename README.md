@@ -1,5 +1,7 @@
 # Ality Intelligence: website
 
+Live: https://andrew-keenlyside.github.io/ality.io/
+
 Static site: `index.html` (home) and `about.html`. No build step; open either file through any static server.
 
 - `css/site.css`: the whole design system (tokens at the top).
